@@ -1,3 +1,4 @@
+import 'package:app_rkode/app/routes/app_pages.dart';
 import 'package:app_rkode/app/shared/shared.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
@@ -17,15 +18,15 @@ class HomeView extends GetView<HomeController> {
             Text(
               'RKode;',
               style: TextStyle(
-                fontSize: 42,
-                fontWeight: FontWeight.bold,
-              ),
+                  fontSize: 42,
+                  fontWeight: FontWeight.bold,
+                  color: BaseColor.goldSand),
             ),
             SizedBox(height: 48),
             BaseButton(
               icon: EvaIcons.wifi,
               label: 'WIFI',
-              onPressed: () {},
+              onPressed: () => Get.toNamed(Routes.wifi),
             ),
             BaseButton(
               icon: EvaIcons.personOutline,
