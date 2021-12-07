@@ -10,6 +10,9 @@ dependencies:
   get: 4.5.1
   flutter: 
     sdk: flutter
+  qr_flutter: ^4.0.0
+  google_fonts: ^2.1.0
+  eva_icons_flutter: ^3.0.2
 
 dev_dependencies: 
   flutter_lints: ^1.0.0
