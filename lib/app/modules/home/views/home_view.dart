@@ -1,3 +1,5 @@
+import 'package:app_rkode/app/shared/shared.dart';
+import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -7,10 +9,35 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text(
-          'Gerar qrCode WIFI',
-          style: TextStyle(fontSize: 20),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 12),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'RKode;',
+              style: TextStyle(
+                fontSize: 42,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 48),
+            BaseButton(
+              icon: EvaIcons.wifi,
+              label: 'WIFI',
+              onPressed: () {},
+            ),
+            BaseButton(
+              icon: EvaIcons.personOutline,
+              label: 'VCARD',
+              onPressed: () {},
+            ),
+            BaseButton(
+              icon: EvaIcons.navigation2Outline,
+              label: 'Localização',
+              onPressed: () {},
+            ),
+          ],
         ),
       ),
     );

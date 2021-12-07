@@ -7,7 +7,6 @@ class BaseTheme {
     return ThemeData(
       primaryColor: BaseColor.martinique,
       scaffoldBackgroundColor: BaseColor.eastBay,
-      fontFamily: 'Montserrat',
       textTheme: GoogleFonts.rubikTextTheme(),
     );
   }
