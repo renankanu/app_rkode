@@ -4,7 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class BaseAppBar extends StatelessWidget {
-  const BaseAppBar({Key? key}) : super(key: key);
+  const BaseAppBar({
+    Key? key,
+    required this.title,
+  }) : super(key: key);
+
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -35,10 +40,10 @@ class BaseAppBar extends StatelessWidget {
             ),
             Center(
               child: Text(
-                'Flutter',
+                title,
                 style: Get.textTheme.headline6!.copyWith(
                   color: BaseColor.cavernPink,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w500,
                   letterSpacing: 2.5,
                 ),
               ),

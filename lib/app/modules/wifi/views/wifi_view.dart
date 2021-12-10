@@ -1,4 +1,4 @@
-import 'package:app_rkode/app/shared/widgets/base_app_bar.dart';
+import 'package:app_rkode/app/shared/shared.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -10,13 +10,16 @@ class WifiView extends GetView<WifiController> {
     return Scaffold(
       body: Column(
         children: [
-          BaseAppBar(),
+          BaseAppBar(
+            title: 'qrCode Wifi',
+          ),
           Center(
             child: Text(
               'WifiView is working',
               style: TextStyle(fontSize: 20),
             ),
           ),
+          BaseTextField()
         ],
       ),
     );
