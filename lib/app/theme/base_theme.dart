@@ -6,7 +6,7 @@ class BaseTheme {
   static ThemeData get darkTheme {
     return ThemeData(
       primaryColor: BaseColor.martinique,
-      scaffoldBackgroundColor: BaseColor.eastBay,
+      scaffoldBackgroundColor: Colors.white,
       textTheme: GoogleFonts.rubikTextTheme(),
     );
   }
