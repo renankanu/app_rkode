@@ -23,7 +23,7 @@ class BaseButton extends StatelessWidget {
         width: double.infinity,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: BaseColor.martinique,
+          color: BaseColor.tanHide,
         ),
         child: InkWell(
           onTap: onPressed,

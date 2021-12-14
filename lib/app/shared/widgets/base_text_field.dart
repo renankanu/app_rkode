@@ -25,12 +25,12 @@ class BaseTextField extends StatelessWidget {
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
           borderSide: const BorderSide(
-            color: BaseColor.goldSand,
+            color: BaseColor.bunting,
           ),
         ),
         labelText: labelText,
         labelStyle: const TextStyle(
-          color: BaseColor.goldSand,
+          color: BaseColor.bunting,
         ),
       ),
     );

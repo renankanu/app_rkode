@@ -3,8 +3,11 @@ import 'package:flutter/material.dart';
 class BaseColor {
   BaseColor._();
 
-  static const martinique = Color(0xFF3B2D5A);
-  static const eastBay = Color(0xFF4E3B6E);
-  static const goldSand = Color(0xFFE6C588);
-  static const cavernPink = Color(0xFFE3C3C3);
+  static const tutu = Color(0xFFFFFBFD);
+  static const frostedMint = Color(0xFFD8FFF2);
+  static const goldenrod = Color(0xFFFCDB66);
+  static const mossGreen = Color(0xFFB8DEB6);
+  static const bunting = Color(0xFF19224C);
+  static const tanHide = Color(0xFFF6895A);
+  static const azalea = Color(0xFFF5BFC8);
 }

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -41,33 +39,41 @@ class WifiView extends GetView<WifiController> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(
-                      color: BaseColor.martinique,
+                      color: BaseColor.bunting,
                       width: 1.5,
                     ),
                   ),
-                  child: DropdownButtonHideUnderline(
-                    child: ButtonTheme(
-                      alignedDropdown: true,
-                      child: DropdownButton<String>(
-                        hint: const Text(
-                          'Selecione o cliente',
-                          style: TextStyle(
-                            color: BaseColor.goldSand,
+                  child: Obx(
+                    () => DropdownButtonHideUnderline(
+                      child: ButtonTheme(
+                        alignedDropdown: true,
+                        child: DropdownButton<String>(
+                          value: controller.wifiSecurity,
+                          hint: const Text(
+                            'Aberta',
+                            style: TextStyle(
+                              color: BaseColor.bunting,
+                            ),
                           ),
+                          underline: const SizedBox.shrink(),
+                          iconEnabledColor: BaseColor.bunting,
+                          items: controller.wifiSecurityList
+                              .map<DropdownMenuItem<String>>(
+                                (wifiSecurity) => DropdownMenuItem<String>(
+                                  value: wifiSecurity,
+                                  child: Text(
+                                    wifiSecurity,
+                                    style: const TextStyle(
+                                      color: BaseColor.bunting,
+                                    ),
+                                  ),
+                                ),
+                              )
+                              .toList(),
+                          onChanged: (wifiSecurity) {
+                            controller.wifiSecurity = wifiSecurity!;
+                          },
                         ),
-                        underline: const SizedBox.shrink(),
-                        iconEnabledColor: BaseColor.goldSand,
-                        items: ['teste', 'teste2']
-                            .map<DropdownMenuItem<String>>(
-                              (e) => DropdownMenuItem<String>(
-                                value: e,
-                                child: Text(e),
-                              ),
-                            )
-                            .toList(),
-                        onChanged: (name) {
-                          log(name!);
-                        },
                       ),
                     ),
                   ),

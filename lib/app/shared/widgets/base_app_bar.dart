@@ -26,7 +26,7 @@ class BaseAppBar extends StatelessWidget {
               height: 40,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: BaseColor.martinique,
+                color: BaseColor.bunting,
               ),
               child: InkWell(
                 onTap: () => Get.back(),
@@ -35,7 +35,7 @@ class BaseAppBar extends StatelessWidget {
                 ),
                 child: const Icon(
                   EvaIcons.arrowIosBack,
-                  color: BaseColor.goldSand,
+                  color: BaseColor.bunting,
                 ),
               ),
             ),
@@ -43,7 +43,7 @@ class BaseAppBar extends StatelessWidget {
               child: Text(
                 title,
                 style: Get.textTheme.headline6!.copyWith(
-                  color: BaseColor.cavernPink,
+                  color: BaseColor.bunting,
                   fontWeight: FontWeight.w500,
                   letterSpacing: 2.5,
                 ),

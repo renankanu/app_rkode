@@ -8,8 +8,8 @@ class BaseTheme {
 
   static ThemeData get darkTheme {
     return ThemeData(
-      primaryColor: BaseColor.martinique,
-      scaffoldBackgroundColor: BaseColor.eastBay,
+      primaryColor: BaseColor.bunting,
+      scaffoldBackgroundColor: BaseColor.tutu,
       textTheme: GoogleFonts.rubikTextTheme(),
     );
   }

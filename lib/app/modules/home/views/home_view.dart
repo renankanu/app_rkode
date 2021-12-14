@@ -22,7 +22,7 @@ class HomeView extends GetView<HomeController> {
               style: TextStyle(
                 fontSize: 42,
                 fontWeight: FontWeight.bold,
-                color: BaseColor.goldSand,
+                color: BaseColor.bunting,
               ),
             ),
             const SizedBox(height: 48),
