@@ -37,16 +37,16 @@ class BaseButton extends StatelessWidget {
                   alignment: Alignment.centerLeft,
                   child: Icon(
                     icon,
-                    color: BaseColor.goldSand,
+                    color: Colors.white,
                   ),
                 ),
                 Center(
                   child: Text(
                     label,
                     style: TextStyle(
-                      color: BaseColor.cavernPink,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                 ),

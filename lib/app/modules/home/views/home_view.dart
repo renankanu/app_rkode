@@ -18,19 +18,20 @@ class HomeView extends GetView<HomeController> {
             Text(
               'RKode;',
               style: TextStyle(
-                  fontSize: 42,
-                  fontWeight: FontWeight.bold,
-                  color: BaseColor.goldSand),
+                fontSize: 42,
+                fontWeight: FontWeight.bold,
+                color: BaseColor.goldSand,
+              ),
             ),
             SizedBox(height: 48),
             BaseButton(
               icon: EvaIcons.wifi,
-              label: 'WIFI',
+              label: 'Wifi',
               onPressed: () => Get.toNamed(Routes.wifi),
             ),
             BaseButton(
               icon: EvaIcons.personOutline,
-              label: 'VCARD',
+              label: 'Vcard',
               onPressed: () {},
             ),
             BaseButton(
