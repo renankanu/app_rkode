@@ -5,10 +5,7 @@ import '../base_color.dart';
 class BaseTextField extends StatelessWidget {
   const BaseTextField({
     Key? key,
-    this.labelText,
   }) : super(key: key);
-
-  final String? labelText;
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +18,21 @@ class BaseTextField extends StatelessWidget {
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
+          borderSide: const BorderSide(
+            color: BaseColor.bunting,
+          ),
+        ),
+        disabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: const BorderSide(
+            color: BaseColor.bunting,
+          ),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: const BorderSide(
+            color: BaseColor.bunting,
+          ),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
@@ -28,7 +40,6 @@ class BaseTextField extends StatelessWidget {
             color: BaseColor.bunting,
           ),
         ),
-        labelText: labelText,
         labelStyle: const TextStyle(
           color: BaseColor.bunting,
         ),

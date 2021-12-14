@@ -10,7 +10,7 @@ class BaseTheme {
     return ThemeData(
       primaryColor: BaseColor.bunting,
       scaffoldBackgroundColor: BaseColor.tutu,
-      textTheme: GoogleFonts.rubikTextTheme(),
+      textTheme: GoogleFonts.montserratTextTheme(),
     );
   }
 }

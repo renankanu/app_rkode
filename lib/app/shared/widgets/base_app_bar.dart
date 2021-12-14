@@ -24,10 +24,6 @@ class BaseAppBar extends StatelessWidget {
             Ink(
               width: 40,
               height: 40,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: BaseColor.bunting,
-              ),
               child: InkWell(
                 onTap: () => Get.back(),
                 customBorder: RoundedRectangleBorder(

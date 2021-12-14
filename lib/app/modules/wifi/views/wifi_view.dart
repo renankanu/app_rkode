@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../shared/shared.dart';
+import '../../../shared/widgets/base_label.dart';
 import '../controllers/wifi_controller.dart';
 
 class WifiView extends GetView<WifiController> {
@@ -24,15 +25,21 @@ class WifiView extends GetView<WifiController> {
               vertical: 32,
             ),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const BaseTextField(
+                const BaseLabel(
                   labelText: 'Nome da rede (SSID)',
                 ),
-                const SizedBox(height: 20),
-                const BaseTextField(
+                const BaseTextField(),
+                const SizedBox(height: 12),
+                const BaseLabel(
                   labelText: 'Senha',
                 ),
-                const SizedBox(height: 20),
+                const BaseTextField(),
+                const SizedBox(height: 12),
+                const BaseLabel(
+                  labelText: 'Tipo de Rede',
+                ),
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
                   width: double.infinity,
@@ -40,7 +47,6 @@ class WifiView extends GetView<WifiController> {
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(
                       color: BaseColor.bunting,
-                      width: 1.5,
                     ),
                   ),
                   child: Obx(
