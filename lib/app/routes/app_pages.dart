@@ -1,8 +1,9 @@
-import 'package:app_rkode/app/modules/home/bindings/home_binding.dart';
-import 'package:app_rkode/app/modules/home/views/home_view.dart';
-import 'package:app_rkode/app/modules/wifi/bindings/wifi_binding.dart';
-import 'package:app_rkode/app/modules/wifi/views/wifi_view.dart';
 import 'package:get/get.dart';
+
+import '../modules/home/bindings/home_binding.dart';
+import '../modules/home/views/home_view.dart';
+import '../modules/wifi/bindings/wifi_binding.dart';
+import '../modules/wifi/views/wifi_view.dart';
 
 part 'app_routes.dart';
 
@@ -14,12 +15,12 @@ class AppPages {
   static final routes = [
     GetPage(
       name: _Paths.home,
-      page: () => HomeView(),
+      page: () => const HomeView(),
       binding: HomeBinding(),
     ),
     GetPage(
       name: _Paths.wifi,
-      page: () => WifiView(),
+      page: () => const WifiView(),
       binding: WifiBinding(),
     ),
   ];

@@ -1,7 +1,8 @@
-import 'package:app_rkode/app/shared/shared.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../shared.dart';
 
 class BaseAppBar extends StatelessWidget {
   const BaseAppBar({
@@ -32,7 +33,7 @@ class BaseAppBar extends StatelessWidget {
                 customBorder: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: Icon(
+                child: const Icon(
                   EvaIcons.arrowIosBack,
                   color: BaseColor.goldSand,
                 ),

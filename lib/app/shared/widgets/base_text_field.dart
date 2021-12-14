@@ -1,5 +1,6 @@
-import 'package:app_rkode/app/shared/base_color.dart';
 import 'package:flutter/material.dart';
+
+import '../base_color.dart';
 
 class BaseTextField extends StatelessWidget {
   const BaseTextField({
@@ -14,7 +15,7 @@ class BaseTextField extends StatelessWidget {
     return TextFormField(
       decoration: InputDecoration(
         isDense: true,
-        contentPadding: EdgeInsets.symmetric(
+        contentPadding: const EdgeInsets.symmetric(
           vertical: 14,
           horizontal: 20,
         ),
@@ -23,12 +24,12 @@ class BaseTextField extends StatelessWidget {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(
+          borderSide: const BorderSide(
             color: BaseColor.goldSand,
           ),
         ),
         labelText: labelText,
-        labelStyle: TextStyle(
+        labelStyle: const TextStyle(
           color: BaseColor.goldSand,
         ),
       ),

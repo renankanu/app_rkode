@@ -1,5 +1,6 @@
-import 'package:app_rkode/app/shared/base_color.dart';
 import 'package:flutter/material.dart';
+
+import '../base_color.dart';
 
 class BaseButton extends StatelessWidget {
   const BaseButton({
@@ -16,7 +17,7 @@ class BaseButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 10),
+      margin: const EdgeInsets.only(bottom: 10),
       child: Ink(
         height: 50,
         width: double.infinity,
@@ -30,7 +31,7 @@ class BaseButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
           ),
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Stack(
               children: [
                 Align(
@@ -43,7 +44,7 @@ class BaseButton extends StatelessWidget {
                 Center(
                   child: Text(
                     label,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 16,
                       fontWeight: FontWeight.w500,

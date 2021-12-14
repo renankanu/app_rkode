@@ -1,12 +1,14 @@
-import 'package:app_rkode/app/routes/app_pages.dart';
-import 'package:app_rkode/app/shared/shared.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../routes/app_pages.dart';
+import '../../../shared/shared.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
+  const HomeView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +17,7 @@ class HomeView extends GetView<HomeController> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               'RKode;',
               style: TextStyle(
                 fontSize: 42,
@@ -23,7 +25,7 @@ class HomeView extends GetView<HomeController> {
                 color: BaseColor.goldSand,
               ),
             ),
-            SizedBox(height: 48),
+            const SizedBox(height: 48),
             BaseButton(
               icon: EvaIcons.wifi,
               label: 'Wifi',
