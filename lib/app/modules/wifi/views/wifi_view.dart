@@ -12,8 +12,11 @@ class WifiView extends GetView<WifiController> {
     return Scaffold(
       body: Column(
         children: [
-          BaseAppBar(
-            title: 'Wifi',
+          Padding(
+            padding: const EdgeInsets.only(top: 12),
+            child: BaseAppBar(
+              title: 'Wifi',
+            ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(
@@ -40,25 +43,30 @@ class WifiView extends GetView<WifiController> {
                       width: 1.5,
                     ),
                   ),
-                  child: DropdownButton<String>(
-                      hint: Text(
-                        "Selecione o cliente",
-                        style: TextStyle(
-                          color: BaseColor.goldSand,
-                        ),
-                      ),
-                      underline: SizedBox(),
-                      iconEnabledColor: BaseColor.goldSand,
-                      items: ['teste', 'teste2']
-                          .map<DropdownMenuItem<String>>(
-                              (e) => DropdownMenuItem<String>(
-                                    value: e,
-                                    child: Text(e),
-                                  ))
-                          .toList(),
-                      onChanged: (name) {
-                        log(name!);
-                      }),
+                  child: DropdownButtonHideUnderline(
+                    child: ButtonTheme(
+                      alignedDropdown: true,
+                      child: DropdownButton<String>(
+                          hint: Text(
+                            "Selecione o cliente",
+                            style: TextStyle(
+                              color: BaseColor.goldSand,
+                            ),
+                          ),
+                          underline: SizedBox(),
+                          iconEnabledColor: BaseColor.goldSand,
+                          items: ['teste', 'teste2']
+                              .map<DropdownMenuItem<String>>(
+                                  (e) => DropdownMenuItem<String>(
+                                        value: e,
+                                        child: Text(e),
+                                      ))
+                              .toList(),
+                          onChanged: (name) {
+                            log(name!);
+                          }),
+                    ),
+                  ),
                 )
               ],
             ),
