@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 import '../base_color.dart';
 
 class BaseTextField extends StatelessWidget {
-  const BaseTextField({
+  const BaseTextField(
+    this.controller, {
     Key? key,
   }) : super(key: key);
+
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {

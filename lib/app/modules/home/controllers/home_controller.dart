@@ -1,6 +1,3 @@
 import 'package:get/get.dart';
 
-class HomeController extends GetxController {
-  @override
-  void onClose() {}
-}
+class HomeController extends GetxController {}

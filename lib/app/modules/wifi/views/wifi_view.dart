@@ -28,82 +28,89 @@ class WifiView extends GetView<WifiController> {
                   horizontal: 20,
                   vertical: 32,
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  children: AnimationConfiguration.toStaggeredList(
-                    childAnimationBuilder: (widget) => SlideAnimation(
-                      horizontalOffset: 100,
-                      child: FadeInAnimation(
-                        child: widget,
-                      ),
-                    ),
-                    children: [
-                      const BaseLabel(
-                        labelText: 'Nome da rede (SSID)',
-                      ),
-                      const BaseTextField(),
-                      const SizedBox(height: 12),
-                      const BaseLabel(
-                        labelText: 'Senha',
-                      ),
-                      const BaseTextField(),
-                      const SizedBox(height: 12),
-                      const BaseLabel(
-                        labelText: 'Tipo de Rede',
-                      ),
-                      Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          border: Border.all(
-                            color: BaseColor.bunting,
-                          ),
+                child: Form(
+                  key: controller.formKey,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.max,
+                    children: AnimationConfiguration.toStaggeredList(
+                      childAnimationBuilder: (widget) => SlideAnimation(
+                        horizontalOffset: 100,
+                        child: FadeInAnimation(
+                          child: widget,
                         ),
-                        child: Obx(
-                          () => DropdownButtonHideUnderline(
-                            child: ButtonTheme(
-                              alignedDropdown: true,
-                              child: DropdownButton<String>(
-                                value: controller.wifiSecurity,
-                                hint: const Text(
-                                  'Aberta',
-                                  style: TextStyle(
-                                    color: BaseColor.bunting,
+                      ),
+                      children: [
+                        const BaseLabel(
+                          labelText: 'Nome da rede (SSID)',
+                        ),
+                        BaseTextField(
+                          controller.nameController,
+                        ),
+                        const SizedBox(height: 12),
+                        const BaseLabel(
+                          labelText: 'Senha',
+                        ),
+                        BaseTextField(
+                          controller.passwordController,
+                        ),
+                        const SizedBox(height: 12),
+                        const BaseLabel(
+                          labelText: 'Tipo de Rede',
+                        ),
+                        Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(
+                              color: BaseColor.bunting,
+                            ),
+                          ),
+                          child: Obx(
+                            () => DropdownButtonHideUnderline(
+                              child: ButtonTheme(
+                                alignedDropdown: true,
+                                child: DropdownButton<String>(
+                                  value: controller.wifiSecurity,
+                                  hint: const Text(
+                                    'Aberta',
+                                    style: TextStyle(
+                                      color: BaseColor.bunting,
+                                    ),
                                   ),
-                                ),
-                                underline: const SizedBox.shrink(),
-                                iconEnabledColor: BaseColor.bunting,
-                                items: controller.wifiSecurityList
-                                    .map<DropdownMenuItem<String>>(
-                                      (wifiSecurity) =>
-                                          DropdownMenuItem<String>(
-                                        value: wifiSecurity,
-                                        child: Text(
-                                          wifiSecurity,
-                                          style: const TextStyle(
-                                            color: BaseColor.bunting,
+                                  underline: const SizedBox.shrink(),
+                                  iconEnabledColor: BaseColor.bunting,
+                                  items: controller.wifiSecurityList
+                                      .map<DropdownMenuItem<String>>(
+                                        (wifiSecurity) =>
+                                            DropdownMenuItem<String>(
+                                          value: wifiSecurity,
+                                          child: Text(
+                                            wifiSecurity,
+                                            style: const TextStyle(
+                                              color: BaseColor.bunting,
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                    )
-                                    .toList(),
-                                onChanged: (wifiSecurity) {
-                                  controller.wifiSecurity = wifiSecurity!;
-                                },
+                                      )
+                                      .toList(),
+                                  onChanged: (wifiSecurity) {
+                                    controller.wifiSecurity = wifiSecurity!;
+                                  },
+                                ),
                               ),
                             ),
                           ),
                         ),
-                      ),
-                      const SizedBox(height: 42),
-                      BaseButton(
-                        label: 'Gerar QrCode',
-                        onPressed: () {},
-                        backgroundColor: BaseColor.bunting,
-                      ),
-                    ],
+                        const SizedBox(height: 42),
+                        BaseButton(
+                          label: 'Gerar QrCode',
+                          onPressed: () => controller.generateQrCode(),
+                          backgroundColor: BaseColor.bunting,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
