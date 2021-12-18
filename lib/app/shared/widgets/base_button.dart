@@ -5,54 +5,54 @@ import '../base_color.dart';
 class BaseButton extends StatelessWidget {
   const BaseButton({
     Key? key,
-    required this.icon,
+    this.icon,
     required this.label,
     required this.onPressed,
+    this.backgroundColor = BaseColor.tanHide,
   }) : super(key: key);
 
-  final IconData icon;
+  final IconData? icon;
   final String label;
   final Function() onPressed;
+  final Color? backgroundColor;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(bottom: 10),
-      child: Ink(
-        height: 50,
-        width: double.infinity,
-        decoration: BoxDecoration(
+      child: InkWell(
+        onTap: onPressed,
+        customBorder: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
-          color: BaseColor.tanHide,
         ),
-        child: InkWell(
-          onTap: onPressed,
-          customBorder: RoundedRectangleBorder(
+        child: Container(
+          height: 50,
+          width: double.infinity,
+          decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
+            color: backgroundColor,
           ),
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Stack(
-              children: [
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Icon(
-                    icon,
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Stack(
+            children: [
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Icon(
+                  icon,
+                  color: Colors.white,
+                ),
+              ),
+              Center(
+                child: Text(
+                  label,
+                  style: const TextStyle(
                     color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
-                Center(
-                  child: Text(
-                    label,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

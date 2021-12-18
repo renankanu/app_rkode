@@ -20,6 +20,7 @@ class WifiView extends GetView<WifiController> {
               title: 'Wifi',
             ),
           ),
+          const SizedBox(height: 24),
           Expanded(
             child: BaseContainer(
               child: Padding(
@@ -29,6 +30,7 @@ class WifiView extends GetView<WifiController> {
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.max,
                   children: AnimationConfiguration.toStaggeredList(
                     childAnimationBuilder: (widget) => SlideAnimation(
                       horizontalOffset: 100,
@@ -94,7 +96,13 @@ class WifiView extends GetView<WifiController> {
                             ),
                           ),
                         ),
-                      )
+                      ),
+                      const SizedBox(height: 42),
+                      BaseButton(
+                        label: 'Gerar QrCode',
+                        onPressed: () {},
+                        backgroundColor: BaseColor.bunting,
+                      ),
                     ],
                   ),
                 ),
