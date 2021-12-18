@@ -28,7 +28,16 @@ class WifiController extends GetxController {
   }
 
   void generateQrCode() {
-    dataQrCode =
-        'WIFI:S:${nameController.text};T:$wifiSecurity;P:${passwordController.text};;';
+    if (formKey.currentState!.validate()) {
+      dataQrCode =
+          'WIFI:S:${nameController.text};T:$wifiSecurity;P:${passwordController.text};;';
+    }
+  }
+
+  @override
+  void onClose() {
+    formKey.currentState!.reset();
+    dataQrCode = '';
+    super.onClose();
   }
 }

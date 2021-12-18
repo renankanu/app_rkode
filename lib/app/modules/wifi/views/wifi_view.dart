@@ -30,6 +30,7 @@ class WifiView extends GetView<WifiController> {
                 ),
                 child: Form(
                   key: controller.formKey,
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisSize: MainAxisSize.max,
@@ -46,6 +47,11 @@ class WifiView extends GetView<WifiController> {
                         ),
                         BaseTextField(
                           controller.nameController,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return 'Informe o nome da rede';
+                            }
+                          },
                         ),
                         const SizedBox(height: 12),
                         const BaseLabel(

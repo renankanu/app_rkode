@@ -6,9 +6,11 @@ class BaseTextField extends StatelessWidget {
   const BaseTextField(
     this.controller, {
     Key? key,
+    this.validator,
   }) : super(key: key);
 
   final TextEditingController controller;
+  final String? Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +49,7 @@ class BaseTextField extends StatelessWidget {
           color: BaseColor.bunting,
         ),
       ),
+      validator: validator,
     );
   }
 }
