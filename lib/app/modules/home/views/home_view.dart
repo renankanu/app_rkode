@@ -15,44 +15,42 @@ class HomeView extends GetView<HomeController> {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 12),
-        child: AnimationLimiter(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: AnimationConfiguration.toStaggeredList(
-              duration: const Duration(milliseconds: 800),
-              childAnimationBuilder: (widget) => SlideAnimation(
-                verticalOffset: 100,
-                child: FadeInAnimation(
-                  child: widget,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: AnimationConfiguration.toStaggeredList(
+            duration: const Duration(milliseconds: 800),
+            childAnimationBuilder: (widget) => SlideAnimation(
+              verticalOffset: 100,
+              child: FadeInAnimation(
+                child: widget,
+              ),
+            ),
+            children: [
+              const Text(
+                'RKode;',
+                style: TextStyle(
+                  fontSize: 42,
+                  fontWeight: FontWeight.bold,
+                  color: BaseColor.bunting,
                 ),
               ),
-              children: [
-                const Text(
-                  'RKode;',
-                  style: TextStyle(
-                    fontSize: 42,
-                    fontWeight: FontWeight.bold,
-                    color: BaseColor.bunting,
-                  ),
-                ),
-                const SizedBox(height: 48),
-                BaseButton(
-                  icon: EvaIcons.wifi,
-                  label: 'Wifi',
-                  onPressed: () => Get.toNamed(Routes.wifi),
-                ),
-                BaseButton(
-                  icon: EvaIcons.personOutline,
-                  label: 'Vcard',
-                  onPressed: () {},
-                ),
-                BaseButton(
-                  icon: EvaIcons.navigation2Outline,
-                  label: 'Localização',
-                  onPressed: () {},
-                ),
-              ],
-            ),
+              const SizedBox(height: 48),
+              BaseButton(
+                icon: EvaIcons.wifi,
+                label: 'Wifi',
+                onPressed: () => Get.toNamed(Routes.wifi),
+              ),
+              BaseButton(
+                icon: EvaIcons.personOutline,
+                label: 'Vcard',
+                onPressed: () {},
+              ),
+              BaseButton(
+                icon: EvaIcons.navigation2Outline,
+                label: 'Localização',
+                onPressed: () {},
+              ),
+            ],
           ),
         ),
       ),

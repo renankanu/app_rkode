@@ -24,24 +24,29 @@ class BaseAppBar extends StatelessWidget {
             Ink(
               width: 40,
               height: 40,
-              child: InkWell(
-                onTap: () => Get.back(),
-                customBorder: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: const Icon(
-                  EvaIcons.arrowIosBack,
-                  color: BaseColor.bunting,
+              child: BaseSlideAnimation(
+                child: InkWell(
+                  onTap: () => Get.back(),
+                  customBorder: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: const Icon(
+                    EvaIcons.arrowIosBack,
+                    color: BaseColor.bunting,
+                  ),
                 ),
               ),
             ),
-            Center(
-              child: Text(
-                title,
-                style: Get.textTheme.headline6!.copyWith(
-                  color: BaseColor.bunting,
-                  fontWeight: FontWeight.w500,
-                  letterSpacing: 2.5,
+            BaseSlideAnimation(
+              direction: BaseSlideDirection.topToBottom,
+              child: Center(
+                child: Text(
+                  title,
+                  style: Get.textTheme.headline6!.copyWith(
+                    color: BaseColor.bunting,
+                    fontWeight: FontWeight.w700,
+                    letterSpacing: 2.5,
+                  ),
                 ),
               ),
             ),
