@@ -40,16 +40,11 @@ class HomeView extends GetView<HomeController> {
                 label: 'Wifi',
                 onPressed: () => Get.toNamed(Routes.wifi),
               ),
-              BaseButton(
-                icon: EvaIcons.personOutline,
-                label: 'Vcard',
-                onPressed: () {},
-              ),
-              BaseButton(
-                icon: EvaIcons.navigation2Outline,
-                label: 'Localização',
-                onPressed: () {},
-              ),
+              // BaseButton(
+              //   icon: EvaIcons.navigation2Outline,
+              //   label: 'Localização',
+              //   onPressed: () {},
+              // ),
             ],
           ),
         ),

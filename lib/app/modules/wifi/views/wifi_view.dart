@@ -68,6 +68,7 @@ class WifiView extends GetView<WifiController> {
                             ),
                             BaseTextField(
                               controller.passwordController,
+                              keyboardType: TextInputType.visiblePassword,
                             ),
                             const SizedBox(height: 12),
                             const BaseLabel(
@@ -145,7 +146,7 @@ class WifiView extends GetView<WifiController> {
                           Text(
                             'Nome da rede(SSID): ${controller.nameController.text}',
                           ),
-                          Text('Senha: ${controller.passwordController.text}'),
+                          const Text('Senha: *******'),
                           Text('Tipo de rede: ${controller.wifiSecurity}'),
                           SizedBox(height: Get.height * 0.03),
                           Center(
