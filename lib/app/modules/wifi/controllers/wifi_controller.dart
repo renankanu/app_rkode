@@ -26,9 +26,8 @@ class WifiController extends GetxController {
   set dataQrCode(String value) => _dataQrCode.value = value;
 
   List<String> wifiSecurityList = [
-    'Aberta',
-    'WEP',
     'WPA/WPA2',
+    'WEP',
   ];
 
   @override
@@ -40,8 +39,15 @@ class WifiController extends GetxController {
   void generateQrCode() {
     if (formKey.currentState!.validate()) {
       dataQrCode =
-          'WIFI:S:${nameController.text};T:$wifiSecurity;P:${passwordController.text};';
+          'WIFI:S:${nameController.text};T:${_validWifiSecurity()};P:${passwordController.text};';
     }
+  }
+
+  String _validWifiSecurity() {
+    if (wifiSecurity == wifiSecurityList[0]) {
+      return 'WPA';
+    }
+    return 'WEP';
   }
 
   void clearAction() {

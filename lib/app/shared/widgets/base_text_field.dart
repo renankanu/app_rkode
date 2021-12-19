@@ -16,6 +16,10 @@ class BaseTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
+      cursorColor: BaseColor.mirage,
+      enableSuggestions: true,
+      keyboardType: TextInputType.name,
+      textCapitalization: TextCapitalization.words,
       decoration: InputDecoration(
         isDense: true,
         contentPadding: const EdgeInsets.symmetric(

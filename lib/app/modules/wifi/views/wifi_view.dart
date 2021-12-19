@@ -32,7 +32,6 @@ class WifiView extends GetView<WifiController> {
             child: Padding(
               padding: const EdgeInsets.symmetric(
                 horizontal: 20,
-                vertical: 32,
               ),
               child: Obx(
                 () => Visibility(
@@ -134,6 +133,7 @@ class WifiView extends GetView<WifiController> {
                   ),
                   replacement: SingleChildScrollView(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: AnimationConfiguration.toStaggeredList(
                         duration: const Duration(milliseconds: 800),
                         childAnimationBuilder: (widget) => ScaleAnimation(
@@ -142,15 +142,23 @@ class WifiView extends GetView<WifiController> {
                           ),
                         ),
                         children: [
-                          Screenshot(
-                            controller: controller.screenshotController,
-                            child: QrImage(
-                              data: controller.dataQrCode,
-                              version: QrVersions.auto,
-                              size: 280,
-                              gapless: true,
-                              backgroundColor: BaseColor.mercury,
-                              padding: const EdgeInsets.all(20),
+                          Text(
+                            'Nome da rede(SSID): ${controller.nameController.text}',
+                          ),
+                          Text('Senha: ${controller.passwordController.text}'),
+                          Text('Tipo de rede: ${controller.wifiSecurity}'),
+                          SizedBox(height: Get.height * 0.03),
+                          Center(
+                            child: Screenshot(
+                              controller: controller.screenshotController,
+                              child: QrImage(
+                                data: controller.dataQrCode,
+                                version: QrVersions.auto,
+                                size: 280,
+                                gapless: true,
+                                backgroundColor: BaseColor.mercury,
+                                padding: const EdgeInsets.all(20),
+                              ),
                             ),
                           ),
                           SizedBox(height: Get.height * 0.1),
