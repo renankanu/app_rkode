@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
 import 'package:qr_flutter/qr_flutter.dart';
+import 'package:screenshot/screenshot.dart';
 
 import '../../../shared/shared.dart';
 import '../controllers/wifi_controller.dart';
@@ -20,7 +21,6 @@ class WifiView extends GetView<WifiController> {
               title: 'Wifi',
             ),
           ),
-          const SizedBox(height: 24),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(
@@ -72,7 +72,7 @@ class WifiView extends GetView<WifiController> {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(
-                                color: BaseColor.boulder,
+                                color: BaseColor.mirage,
                               ),
                             ),
                             child: Obx(
@@ -84,11 +84,11 @@ class WifiView extends GetView<WifiController> {
                                     hint: const Text(
                                       'Aberta',
                                       style: TextStyle(
-                                        color: BaseColor.boulder,
+                                        color: BaseColor.mirage,
                                       ),
                                     ),
                                     underline: const SizedBox.shrink(),
-                                    iconEnabledColor: BaseColor.boulder,
+                                    iconEnabledColor: BaseColor.mirage,
                                     items: controller.wifiSecurityList
                                         .map<DropdownMenuItem<String>>(
                                           (wifiSecurity) =>
@@ -97,7 +97,7 @@ class WifiView extends GetView<WifiController> {
                                             child: Text(
                                               wifiSecurity,
                                               style: const TextStyle(
-                                                color: BaseColor.boulder,
+                                                color: BaseColor.mirage,
                                               ),
                                             ),
                                           ),
@@ -115,6 +115,7 @@ class WifiView extends GetView<WifiController> {
                           BaseButton(
                             label: 'Gerar QrCode',
                             onPressed: () => controller.generateQrCode(),
+                            labelColor: Colors.white,
                             backgroundColor: BaseColor.fern,
                           ),
                         ],
@@ -122,27 +123,34 @@ class WifiView extends GetView<WifiController> {
                     ),
                   ),
                   replacement: Column(
-                    children: [
-                      QrImage(
-                        data: controller.dataQrCode,
-                        version: QrVersions.auto,
-                        size: 280,
-                        gapless: true,
+                    children: AnimationConfiguration.toStaggeredList(
+                      duration: const Duration(milliseconds: 800),
+                      childAnimationBuilder: (widget) => ScaleAnimation(
+                        child: FadeInAnimation(
+                          child: widget,
+                        ),
                       ),
-                      const Spacer(),
-                      BaseButton(
-                        label: 'Compartilhar',
-                        isUseSameColor: true,
-                        onPressed: () {},
-                        width: Get.width / 2,
-                      ),
-                      BaseButton(
-                        backgroundColor: BaseColor.fern,
-                        isUseSameColor: true,
-                        label: 'Baixar',
-                        onPressed: () {},
-                      )
-                    ],
+                      children: [
+                        Screenshot(
+                          controller: controller.screenshotController,
+                          child: QrImage(
+                            data: controller.dataQrCode,
+                            version: QrVersions.auto,
+                            size: 280,
+                            gapless: true,
+                            backgroundColor: BaseColor.mercury,
+                            padding: const EdgeInsets.all(20),
+                          ),
+                        ),
+                        SizedBox(height: Get.height * 0.1),
+                        BaseButton(
+                          label: 'Compartilhar',
+                          icon: Icons.share,
+                          hasBorderSameColor: true,
+                          onPressed: () => controller.shareQrCode(),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

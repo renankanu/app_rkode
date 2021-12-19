@@ -9,18 +9,20 @@ class BaseButton extends StatelessWidget {
     required this.label,
     required this.onPressed,
     this.backgroundColor = BaseColor.tanHide,
+    this.labelColor = BaseColor.mirage,
     this.height = 50,
     this.width = double.infinity,
-    this.isUseSameColor = false,
+    this.hasBorderSameColor = false,
   }) : super(key: key);
 
   final IconData? icon;
   final String label;
   final Function() onPressed;
   final Color? backgroundColor;
+  final Color? labelColor;
   final double? height;
   final double? width;
-  final bool? isUseSameColor;
+  final bool? hasBorderSameColor;
 
   @override
   Widget build(BuildContext context) {
@@ -36,9 +38,12 @@ class BaseButton extends StatelessWidget {
           width: width,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: isUseSameColor!
-                ? backgroundColor!.withOpacity(0.3)
+            color: hasBorderSameColor!
+                ? backgroundColor!.withOpacity(0.1)
                 : backgroundColor,
+            border: hasBorderSameColor!
+                ? Border.all(color: backgroundColor!)
+                : null,
           ),
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Stack(
@@ -47,14 +52,14 @@ class BaseButton extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 child: Icon(
                   icon,
-                  color: isUseSameColor! ? backgroundColor : Colors.white,
+                  color: hasBorderSameColor! ? backgroundColor : labelColor,
                 ),
               ),
               Center(
                 child: Text(
                   label,
                   style: TextStyle(
-                    color: isUseSameColor! ? backgroundColor : Colors.white,
+                    color: hasBorderSameColor! ? backgroundColor : labelColor,
                     fontSize: 16,
                     fontWeight: FontWeight.w700,
                   ),
