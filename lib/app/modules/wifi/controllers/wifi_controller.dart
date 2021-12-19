@@ -36,7 +36,6 @@ class WifiController extends GetxController {
 
   @override
   void onClose() {
-    formKey.currentState!.reset();
     dataQrCode = '';
     super.onClose();
   }

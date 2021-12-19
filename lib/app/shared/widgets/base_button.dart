@@ -9,12 +9,18 @@ class BaseButton extends StatelessWidget {
     required this.label,
     required this.onPressed,
     this.backgroundColor = BaseColor.tanHide,
+    this.height = 50,
+    this.width = double.infinity,
+    this.isUseSameColor = false,
   }) : super(key: key);
 
   final IconData? icon;
   final String label;
   final Function() onPressed;
   final Color? backgroundColor;
+  final double? height;
+  final double? width;
+  final bool? isUseSameColor;
 
   @override
   Widget build(BuildContext context) {
@@ -26,11 +32,13 @@ class BaseButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
         ),
         child: Container(
-          height: 50,
-          width: double.infinity,
+          height: height,
+          width: width,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: backgroundColor,
+            color: isUseSameColor!
+                ? backgroundColor!.withOpacity(0.3)
+                : backgroundColor,
           ),
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Stack(
@@ -39,16 +47,16 @@ class BaseButton extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 child: Icon(
                   icon,
-                  color: Colors.white,
+                  color: isUseSameColor! ? backgroundColor : Colors.white,
                 ),
               ),
               Center(
                 child: Text(
                   label,
-                  style: const TextStyle(
-                    color: Colors.white,
+                  style: TextStyle(
+                    color: isUseSameColor! ? backgroundColor : Colors.white,
                     fontSize: 16,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
               ),
