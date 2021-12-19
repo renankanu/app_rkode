@@ -8,9 +8,11 @@ class BaseAppBar extends StatelessWidget {
   const BaseAppBar({
     Key? key,
     required this.title,
+    this.onRepeatAction,
   }) : super(key: key);
 
   final String title;
+  final Function()? onRepeatAction;
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +52,29 @@ class BaseAppBar extends StatelessWidget {
                 ),
               ),
             ),
+            Align(
+              alignment: Alignment.centerRight,
+              child: Visibility(
+                visible: onRepeatAction != null,
+                child: Ink(
+                  width: 40,
+                  height: 40,
+                  child: BaseSlideAnimation(
+                    direction: BaseSlideDirection.rightToLeft,
+                    child: InkWell(
+                      onTap: () => onRepeatAction?.call(),
+                      customBorder: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: const Icon(
+                        EvaIcons.repeatOutline,
+                        color: BaseColor.mirage,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),

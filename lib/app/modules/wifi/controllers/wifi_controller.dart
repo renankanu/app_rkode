@@ -40,14 +40,15 @@ class WifiController extends GetxController {
   void generateQrCode() {
     if (formKey.currentState!.validate()) {
       dataQrCode =
-          'WIFI:S:${nameController.text};T:$wifiSecurity;P:${passwordController.text};;';
+          'WIFI:S:${nameController.text};T:$wifiSecurity;P:${passwordController.text};';
     }
   }
 
-  @override
-  void onClose() {
+  void clearAction() {
+    nameController.clear();
+    passwordController.clear();
+    wifiSecurity = wifiSecurityList[0];
     dataQrCode = '';
-    super.onClose();
   }
 
   Future<void> shareQrCode() async {
@@ -103,5 +104,11 @@ class WifiController extends GetxController {
         Get.snackbar('Error ❗️', 'Opps! Erro ao baixar QrCode 😔');
       }
     }
+  }
+
+  @override
+  void onClose() {
+    dataQrCode = '';
+    super.onClose();
   }
 }
