@@ -3,9 +3,12 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:screenshot/screenshot.dart';
 import 'package:share_plus/share_plus.dart';
+
+import '../../../shared/base_color.dart';
 
 class WifiController extends GetxController {
   final TextEditingController nameController = TextEditingController();
@@ -65,6 +68,40 @@ class WifiController extends GetxController {
           );
         }
       });
+    }
+  }
+
+  Future<void> downloadQrCode() async {
+    if (dataQrCode != '') {
+      try {
+        final now = DateTime.now().toString();
+        await screenshotController
+            .capture(delay: const Duration(milliseconds: 10))
+            .then((Uint8List? image) async {
+          if (image != null) {
+            final _ = await ImageGallerySaver.saveImage(
+              image,
+              quality: 80,
+              name: 'RKodeWIFI$now.png',
+            );
+          }
+        });
+        Get.snackbar(
+          'Sucesso 🎉',
+          'RKodeWIFI$now.png salvo em imagens.',
+          forwardAnimationCurve: Curves.bounceInOut,
+          backgroundColor: BaseColor.fern.withOpacity(0.5),
+          barBlur: 5,
+          isDismissible: true,
+          duration: const Duration(seconds: 5),
+          mainButton: TextButton(
+            onPressed: () => Get.back(),
+            child: const Text('OK'),
+          ),
+        );
+      } on Exception catch (_) {
+        Get.snackbar('Error ❗️', 'Opps! Erro ao baixar QrCode 😔');
+      }
     }
   }
 }

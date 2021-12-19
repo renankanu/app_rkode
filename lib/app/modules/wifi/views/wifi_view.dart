@@ -149,6 +149,13 @@ class WifiView extends GetView<WifiController> {
                           hasBorderSameColor: true,
                           onPressed: () => controller.shareQrCode(),
                         ),
+                        BaseButton(
+                          label: 'Baixar',
+                          icon: Icons.download,
+                          backgroundColor: BaseColor.fern,
+                          hasBorderSameColor: true,
+                          onPressed: () => controller.downloadQrCode(),
+                        ),
                       ],
                     ),
                   ),
