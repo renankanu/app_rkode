@@ -32,7 +32,7 @@ class BaseAppBar extends StatelessWidget {
                   ),
                   child: const Icon(
                     EvaIcons.arrowIosBack,
-                    color: BaseColor.bunting,
+                    color: BaseColor.mirage,
                   ),
                 ),
               ),
@@ -43,7 +43,7 @@ class BaseAppBar extends StatelessWidget {
                 child: Text(
                   title,
                   style: Get.textTheme.headline6!.copyWith(
-                    color: BaseColor.bunting,
+                    color: BaseColor.mirage,
                     fontWeight: FontWeight.w700,
                     letterSpacing: 2.5,
                   ),

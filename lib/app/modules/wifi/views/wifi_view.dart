@@ -72,7 +72,7 @@ class WifiView extends GetView<WifiController> {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(
-                                color: BaseColor.bunting,
+                                color: BaseColor.boulder,
                               ),
                             ),
                             child: Obx(
@@ -84,11 +84,11 @@ class WifiView extends GetView<WifiController> {
                                     hint: const Text(
                                       'Aberta',
                                       style: TextStyle(
-                                        color: BaseColor.bunting,
+                                        color: BaseColor.boulder,
                                       ),
                                     ),
                                     underline: const SizedBox.shrink(),
-                                    iconEnabledColor: BaseColor.bunting,
+                                    iconEnabledColor: BaseColor.boulder,
                                     items: controller.wifiSecurityList
                                         .map<DropdownMenuItem<String>>(
                                           (wifiSecurity) =>
@@ -97,7 +97,7 @@ class WifiView extends GetView<WifiController> {
                                             child: Text(
                                               wifiSecurity,
                                               style: const TextStyle(
-                                                color: BaseColor.bunting,
+                                                color: BaseColor.boulder,
                                               ),
                                             ),
                                           ),
@@ -115,7 +115,7 @@ class WifiView extends GetView<WifiController> {
                           BaseButton(
                             label: 'Gerar QrCode',
                             onPressed: () => controller.generateQrCode(),
-                            backgroundColor: BaseColor.bunting,
+                            backgroundColor: BaseColor.fern,
                           ),
                         ],
                       ),
@@ -137,7 +137,7 @@ class WifiView extends GetView<WifiController> {
                         width: Get.width / 2,
                       ),
                       BaseButton(
-                        backgroundColor: BaseColor.tutu,
+                        backgroundColor: BaseColor.fern,
                         isUseSameColor: true,
                         label: 'Baixar',
                         onPressed: () {},

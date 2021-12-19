@@ -25,29 +25,29 @@ class BaseTextField extends StatelessWidget {
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
           borderSide: const BorderSide(
-            color: BaseColor.bunting,
+            color: BaseColor.mirage,
           ),
         ),
         disabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
           borderSide: const BorderSide(
-            color: BaseColor.bunting,
+            color: BaseColor.mirage,
           ),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
           borderSide: const BorderSide(
-            color: BaseColor.bunting,
+            color: BaseColor.mirage,
           ),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
           borderSide: const BorderSide(
-            color: BaseColor.bunting,
+            color: BaseColor.mirage,
           ),
         ),
         labelStyle: const TextStyle(
-          color: BaseColor.bunting,
+          color: BaseColor.mirage,
         ),
       ),
       validator: validator,

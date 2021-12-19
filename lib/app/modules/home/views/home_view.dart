@@ -31,7 +31,7 @@ class HomeView extends GetView<HomeController> {
                 style: TextStyle(
                   fontSize: 42,
                   fontWeight: FontWeight.bold,
-                  color: BaseColor.bunting,
+                  color: BaseColor.mirage,
                 ),
               ),
               const SizedBox(height: 48),

@@ -8,8 +8,8 @@ class BaseTheme {
 
   static ThemeData get darkTheme {
     return ThemeData(
-      primaryColor: BaseColor.bunting,
-      scaffoldBackgroundColor: BaseColor.tutu,
+      primaryColor: BaseColor.mirage,
+      scaffoldBackgroundColor: BaseColor.mercury,
       textTheme: GoogleFonts.montserratTextTheme(),
     );
   }
