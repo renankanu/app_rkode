@@ -2,6 +2,10 @@
 
 Projeto para gerar QrCode do seu Wifi.
 
+## Preview
+
+<img src="assets/prints/record_screen.gif" alt="Screen1" width="300"/>
+
 ## Imagens
 
 <img src="assets/prints/screen1.png" alt="Screen1" width="200"/>
