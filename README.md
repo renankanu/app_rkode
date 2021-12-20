@@ -4,10 +4,10 @@ Projeto para gerar QrCode do seu Wifi.
 
 ## Imagens
 
-![Screenshot1](assets/prints/screen1.png)
-![Screenshot2](assets/prints/screen2.png)
-![Screenshot3](assets/prints/screen3.png)
-![Screenshot4](assets/prints/screen4.png)
-![Screenshot5](assets/prints/screen5.png)
+<img src="assets/prints/screen1.png" alt="Screen1" width="200"/>
+<img src="assets/prints/screen2.png" alt="Screen1" width="200"/>
+<img src="assets/prints/screen3.png" alt="Screen1" width="200"/>
+<img src="assets/prints/screen4.png" alt="Screen1" width="200"/>
+<img src="assets/prints/screen5.png" alt="Screen1" width="200"/>
 
 - [RenanKanu;](https://www.renankanu.com.br)
